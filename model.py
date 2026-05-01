@@ -377,7 +377,10 @@ def main():
 		return
 
 	train_samples, val_samples, test_samples = split_samples(samples, args.train_ratio, args.val_ratio, args.seed)
-	transform = transforms.ToTensor()
+	transform = transforms.Compose([
+		transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
+		transforms.ToTensor(),
+	])
 
 	train_ds = QuadrantDataset(train_samples, transform=transform)
 	val_ds = QuadrantDataset(val_samples, transform=transform)
