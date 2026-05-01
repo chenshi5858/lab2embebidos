@@ -1,6 +1,0 @@
-model_name,best_epoch,val_exact_acc,val_label_acc,params,macs,flops,pt_size_bytes,onnx_size_bytes,checkpoint_path,onnx_path
-fc_tiny,1,0.30357142431395395,0.6964285714285714,590083,590016,1180032,2362653,2360986,outputs_trainval_check\checkpoints\fc_tiny.pt,outputs_trainval_check\onnx\fc_tiny.onnx
-fc_small,1,0.44642857142857145,0.7261904563222613,1184003,1183840,2367680,4739105,4736948,outputs_trainval_check\checkpoints\fc_small.pt,outputs_trainval_check\onnx\fc_small.onnx
-cnn_tiny,1,0.0,0.5119047675813947,1299,3317808,6635616,8353,6766,outputs_trainval_check\checkpoints\cnn_tiny.pt,outputs_trainval_check\onnx\cnn_tiny.onnx
-cnn_stride,1,0.0,0.6666666865348816,1427,1124400,2248800,8889,7060,outputs_trainval_check\checkpoints\cnn_stride.pt,outputs_trainval_check\onnx\cnn_stride.onnx
-cnn_small,1,0.0,0.24999999574252538,2155,8626480,17252960,12965,11104,outputs_trainval_check\checkpoints\cnn_small.pt,outputs_trainval_check\onnx\cnn_small.onnx

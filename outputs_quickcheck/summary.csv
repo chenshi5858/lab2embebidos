@@ -1,6 +1,0 @@
-model_name,best_epoch,val_exact_acc,val_label_acc,test_exact_acc,test_label_acc,params,macs,flops,pt_size_bytes,onnx_size_bytes,checkpoint_path,onnx_path
-fc_tiny,1,0.19512195340016994,0.5772357684809987,0.25581395487452663,0.6356589045635489,590083,590016,1180032,2362653,2360986,outputs_quickcheck\checkpoints\fc_tiny.pt,outputs_quickcheck\onnx\fc_tiny.onnx
-fc_small,1,0.3658536607172431,0.7235772507946666,0.4883720971817194,0.7829457202623057,1184003,1183840,2367680,4739105,4736948,outputs_quickcheck\checkpoints\fc_small.pt,outputs_quickcheck\onnx\fc_small.onnx
-cnn_tiny,1,0.0,0.43089431742342504,0.0,0.3720930184042731,1299,3317808,6635616,8353,6766,outputs_quickcheck\checkpoints\cnn_tiny.pt,outputs_quickcheck\onnx\cnn_tiny.onnx
-cnn_stride,1,0.0,0.43089430361259273,0.0,0.5038759805435358,1427,1124400,2248800,8889,7060,outputs_quickcheck\checkpoints\cnn_stride.pt,outputs_quickcheck\onnx\cnn_stride.onnx
-cnn_small,1,0.2195121953036727,0.5691056731270581,0.1395348844140075,0.49612404925878656,2155,8626480,17252960,12965,11104,outputs_quickcheck\checkpoints\cnn_small.pt,outputs_quickcheck\onnx\cnn_small.onnx

@@ -4,3 +4,5 @@ matplotlib>=3.8
 Pillow>=10.0
 onnx>=1.16
 netron>=8.0
+playwright>=1.43
+thop>=0.1.1
