@@ -75,12 +75,13 @@ bool IdentifierDetector::Begin() {
         return false;
     }
 
-    static tflite::MicroMutableOpResolver<5> resolver;
+    static tflite::MicroMutableOpResolver<6> resolver;
     resolver.AddConv2D();
     resolver.AddMaxPool2D();
     resolver.AddConcatenation();
     resolver.AddReshape();
     resolver.AddFullyConnected();
+    resolver.AddQuantize();
 
     static tflite::MicroInterpreter static_interpreter(
         g_model, resolver, g_tensor_arena, kTensorArenaSize);
