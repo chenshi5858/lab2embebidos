@@ -1,0 +1,30 @@
+menu "Identifier detector"
+
+config IDENTIFIER_USE_CAMERA
+    bool "Use ESP-CAM as image source"
+    default n
+    help
+        When disabled, the app runs inference over main/static_image_data.cc.
+        Enable this after connecting the ESP32-CAM.
+
+config IDENTIFIER_LED_GPIO
+    int "Detection LED GPIO"
+    default 4
+    help
+        GPIO driven high when the identifier is detected. GPIO 4 is the flash LED
+        on many ESP32-CAM AI Thinker boards.
+
+config IDENTIFIER_MIN_MARGIN
+    int "Minimum margin over absent class"
+    default 0
+    help
+        Required raw int8 score margin between the winning identifier class and
+        class 0. Keep 0 for argmax-only detection; increase it to reduce false
+        positives.
+
+config IDENTIFIER_PERIOD_MS
+    int "Inference period in milliseconds"
+    default 500
+    range 20 10000
+
+endmenu
