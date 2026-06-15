@@ -1,0 +1,5 @@
+# TensorFlow does not currently install in the existing Python 3.14 venv.
+# Use Python 3.11 or 3.12 for this project.
+tensorflow==2.16.1
+keras==3.3.3
+numpy>=1.26,<2
