@@ -1,5 +1,7 @@
-# TensorFlow does not currently install in the existing Python 3.14 venv.
-# Use Python 3.11 or 3.12 for this project.
+# Use Python 3.11 or 3.12. TensorFlow does not support this project on Python 3.14.
 tensorflow==2.16.1
-keras==3.3.3
+tf-keras>=2.16,<2.17
+tensorflow-model-optimization>=0.8,<0.9
 numpy>=1.26,<2
+Pillow>=10.0
+matplotlib>=3.8,<4

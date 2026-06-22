@@ -75,6 +75,45 @@ python train_identifier_presence.py --source esp --positive_weight_multiplier 1.
 python train_identifier_presence.py --source esp --model_variant spatial_small
 ```
 
+## Binary SkipPoolCNN variant
+
+To train the SkipPoolCNN architecture as a binary presence detector instead of
+predicting quadrants, run:
+
+```powershell
+python skippoolcnn_tf_presence_binary_version.py --source esp
+```
+
+This variant uses the first numeric label as `0 = absent` and `1 = present`, ignores the
+quadrant column, selects a validation threshold, and exports Float32/INT8 TFLite
+models, firmware C arrays, reports, and evaluation plots.
+
+The current default is the improved `multiscale` variant. It adds max/average
+skip branches, batch normalization and a small spatial head, and selects the
+threshold using validation F1. Its outputs are written to:
+
+```text
+outputs/skippool_presence_binary_improved/
+```
+
+To reproduce the original 6,713-parameter architecture, use:
+
+```powershell
+python skippoolcnn_tf_presence_binary_version.py --source esp --model_variant compact --output_dir outputs/skippool_presence_binary_compact
+```
+
+## LiteSpatialFusionCNN
+
+The lighter alternative created for ESP deployment keeps a 12x12 spatial map
+and fuses it with max/average-pooled raw pixels. Train and export it with:
+
+```powershell
+python train_lite_spatial_presence.py --source esp --variant small
+```
+
+Outputs, including the full-INT8 model and C/C++ model array, are written to
+`outputs/lite_spatial_presence/`.
+
 ## ESP32-S3-CAM inference notes
 
 Use the int8 model for TensorFlow Lite Micro:
