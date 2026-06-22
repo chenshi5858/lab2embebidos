@@ -1,6 +1,6 @@
 # SkipPoolCNN Low-Rank Factorization Report
 
-Generated: 2026-06-22T00:12:00
+Generated: 2026-06-22T15:29:15
 
 ## Configuration
 
@@ -10,35 +10,35 @@ Generated: 2026-06-22T00:12:00
 - Full-rank parameters: `96679`.
 - Low-rank parameters: `36967`.
 - Parameter reduction: `61.76%`.
-- SVD relative reconstruction error: `0.627609`.
-- Initial output MAE after factorization: `0.034698`.
+- SVD relative reconstruction error: `0.663195`.
+- Initial output MAE after factorization: `0.037540`.
 
 The factorization replaces `W` with `A @ B`, where 
 `A` has shape `(flattened_features, 8)` and `B` has shape `(8, 24)`.
 
 ## Thresholds
 
-- Full rank: `0.4300`.
-- Low rank: `0.4200` (best validation f1).
+- Full rank: `0.4900`.
+- Low rank: `0.3700` (best validation f1).
 
 ## Metrics
 
 | model | accuracy | precision | recall | specificity | balanced_accuracy | f1 | f2 | mcc | tn | fp | fn | tp |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| full_rank_val | 0.7804 | 0.8240 | 0.8047 | 0.7442 | 0.7744 | 0.8142 | 0.8085 | 0.5460 | 64 | 22 | 25 | 103 |
-| full_rank_test | 0.7617 | 0.8080 | 0.7891 | 0.7209 | 0.7550 | 0.7984 | 0.7928 | 0.5073 | 62 | 24 | 27 | 101 |
-| low_rank_val | 0.7664 | 0.8047 | 0.8047 | 0.7093 | 0.7570 | 0.8047 | 0.8047 | 0.5140 | 61 | 25 | 25 | 103 |
-| low_rank_test | 0.7523 | 0.7820 | 0.8125 | 0.6628 | 0.7376 | 0.7969 | 0.8062 | 0.4804 | 57 | 29 | 24 | 104 |
-| low_rank_test_int8 | 0.7570 | 0.7879 | 0.8125 | 0.6744 | 0.7435 | 0.8000 | 0.8075 | 0.4910 | 58 | 28 | 24 | 104 |
+| full_rank_val | 0.7422 | 0.7153 | 0.8047 | 0.6797 | 0.7422 | 0.7574 | 0.7851 | 0.4882 | 87 | 41 | 25 | 103 |
+| full_rank_test | 0.7500 | 0.7133 | 0.8359 | 0.6641 | 0.7500 | 0.7698 | 0.8082 | 0.5076 | 85 | 43 | 21 | 107 |
+| low_rank_val | 0.7148 | 0.6590 | 0.8906 | 0.5391 | 0.7148 | 0.7575 | 0.8321 | 0.4590 | 69 | 59 | 14 | 114 |
+| low_rank_test | 0.6875 | 0.6304 | 0.9062 | 0.4688 | 0.6875 | 0.7436 | 0.8333 | 0.4170 | 60 | 68 | 12 | 116 |
+| low_rank_test_int8 | 0.6914 | 0.6310 | 0.9219 | 0.4609 | 0.6914 | 0.7492 | 0.8441 | 0.4314 | 59 | 69 | 10 | 118 |
 
 ## Model Sizes
 
 | artifact | size_mb |
 | --- | ---: |
-| full_rank_keras | 1.1834 |
-| low_rank_keras | 0.5040 |
-| low_rank_tflite_float32 | 0.1452 |
-| low_rank_tflite_int8 | 0.0425 |
+| full_rank_keras | 1.1918 |
+| low_rank_keras | 0.5127 |
+| low_rank_tflite_float32 | 0.1466 |
+| low_rank_tflite_int8 | 0.0444 |
 
 ## Artifacts
 

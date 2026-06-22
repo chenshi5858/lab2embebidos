@@ -141,3 +141,30 @@ identifier is present.
 For field testing, if the ESP still misses identifiers, start with threshold
 `0.25`. It is more sensitive than the automatic threshold and is usually the
 better first value when false negatives are more harmful than false positives.
+
+## Robust detector with false-positive control
+
+`train_robust_identifier_presence.py` is the recommended pipeline when the
+camera reports an identifier in empty scenes. It removes exact duplicates,
+keeps adjacent capture frames in the same split, trains with a larger
+120,489-parameter multiscale CNN, mines hard negatives, and selects the final
+threshold using INT8 validation outputs with a minimum-specificity target.
+
+```powershell
+python train_robust_identifier_presence.py
+```
+
+The defaults use both ESP and phone images, penalize false positives by `2.0`,
+and request at least `0.95` validation specificity. Artifacts are written to
+`outputs/robust_identifier_presence_all/`.
+
+For the most useful field retraining, save images that the device classified
+as present even though the identifier was absent, then run:
+
+```powershell
+python train_robust_identifier_presence.py `
+  --hard_negative_dir field_hard_negatives
+```
+
+The generated header contains `kRobustPresenceThreshold`; firmware should use
+that value instead of maintaining a separate manual threshold.
