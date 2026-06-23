@@ -51,7 +51,12 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Optional trained multiscale .keras model. If omitted, train it first.",
     )
-    parser.add_argument("--threshold", type=float, default=None)
+    parser.add_argument(
+        "--threshold",
+        type=float,
+        default=0.55,
+        help="Presence decision threshold (default: 0.55). Use a custom value to override it.",
+    )
     parser.add_argument(
         "--threshold_metric",
         choices=("balanced_accuracy", "f1", "f2", "accuracy", "mcc"),
